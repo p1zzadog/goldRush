@@ -23,7 +23,6 @@ var mainControllerFunc = function ($scope) {
 
 	}
 
-	// $scope.commentVisibility = false;
 	$scope.showComment = function (index) {
 		$scope.positionArray[index].commentVisibility = !$scope.positionArray[index].commentVisibility
 	}
@@ -33,3 +32,5 @@ var mainControllerFunc = function ($scope) {
 
 //Registering the controller: mainController
 angular.module('goldRushApp').controller('mainController',['$scope',mainControllerFunc])
+
+// Master Branch!!!!
