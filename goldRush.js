@@ -14,10 +14,16 @@ var mainControllerFunc = function ($scope) {
 			comments: '',
 		} 
 		$scope.positionArray.push(goldLocation)
-		console.log($scope.positionArray[event])
 		console.log($scope.positionArray)
 	}
 
+	$scope.removeMarker = function (index) {
+		console.log('index is', index)
+		console.log($scope.positionArray[index])
+		// $scope.positionArray[index].xposition = null
+		// $scope.positionArray[index].yposition = null
+		$scope.positionArray[index] = [{xposition: null, yposition:null,comments:''}]
+	}
 }
 
 //Registering the controller: mainController

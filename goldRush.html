@@ -12,9 +12,17 @@
 
 	<div class="containerDiv">
 		<img ng-click="mapClick($event)" class="imageMap" src="images/topo-co.jpg">
-		<div class="markerDiv" style="top:{{yPosition}}px; left:{{xPosition}}px">
+		
+		<div ng-repeat="location in positionArray">
+			
+			<div  ng-click="removeMarker($index)" class="markerDiv" style="top:{{location.yposition}}px; left:{{location.xposition}}px">
 			<p>X</p>
+			
+			</div>
 		</div>	
+	
+
+
 	</div>	
 
 	<script type="text/javascript" src="goldRush.js"></script>
