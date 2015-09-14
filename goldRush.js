@@ -11,20 +11,25 @@ var mainControllerFunc = function ($scope) {
 		var goldLocation = {
 			xposition: $scope.xPosition = (event.pageX - 24),
 			yposition: $scope.yPosition = (event.pageY - 24),
-			comments: '',
+			comments: prompt('Comments: '),
+			commentVisibility: false,
 		} 
 		$scope.positionArray.push(goldLocation)
 		console.log($scope.positionArray)
 	}
 
 	$scope.removeMarker = function (index) {
-		console.log('index is', index)
-		console.log($scope.positionArray[index])
-		// $scope.positionArray[index].xposition = null
-		// $scope.positionArray[index].yposition = null
-		$scope.positionArray[index] = [{xposition: null, yposition:null,comments:''}]
+		$scope.positionArray.splice(index,1)
+
 	}
+
+	// $scope.commentVisibility = false;
+	$scope.showComment = function (index) {
+		$scope.positionArray[index].commentVisibility = !$scope.positionArray[index].commentVisibility
+	}
+
 }
+
 
 //Registering the controller: mainController
 angular.module('goldRushApp').controller('mainController',['$scope',mainControllerFunc])

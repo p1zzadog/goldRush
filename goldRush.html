@@ -15,10 +15,13 @@
 		
 		<div ng-repeat="location in positionArray">
 			
-			<div  ng-click="removeMarker($index)" class="markerDiv" style="top:{{location.yposition}}px; left:{{location.xposition}}px">
+			<div ng-mouseenter="showComment($index)" ng-mouseleave="showComment($index)" ng-click="removeMarker($index)" class="markerDiv" style="top:{{location.yposition}}px; left:{{location.xposition}}px">
+
 			<p>X</p>
+				<div ng-show="location.commentVisibility"> {{location.comments}} </div>
 			
 			</div>
+
 		</div>	
 	
 
